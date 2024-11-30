@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopt a Pet - Animal Rescue Finder | Find Your Perfect Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <meta name="description" content="Find your perfect companion through Animal Rescue Finder's adoption page. Browse available pets, learn about the adoption process, and start your journey to pet parenthood.">
+    <link rel="canonical" href="https://www.animalrescuefinder.com/adopt" />
+    <meta property="og:title" content="Adopt a Pet - Animal Rescue Finder | Find Your Perfect Companion">
+    <meta property="og:description" content="Browse available pets for adoption, learn about the adoption process, and find your new furry friend with Animal Rescue Finder.">
+    <meta property="og:image" content="https://www.animalrescuefinder.com/images/adopt-og-image.jpg">
+    <meta property="og:url" content="https://www.animalrescuefinder.com/adopt">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="adopt-page">
+    <header class="glass-effect">
+        <div class="header-content">
+            <a href="home.html" class="logo-link" aria-label="Go to homepage">
+                <img src="images/logo.jpg" alt="Animal Rescue Finder Logo" class="logo" width="60" height="60">
+                <h1>Animal Rescue Finder</h1>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Donate</a></li>
+                    <li><a href="index.html"><i class="fas fa-search-location" aria-hidden="true"></i> Find Rescues</a></li>
+                    <li><a href="adopt.html" class="active" aria-current="page"><i class="fas fa-paw" aria-hidden="true"></i> Adopt</a></li>
+                    <li><a href="join.html" class="nav-cta"><i class="fas fa-user-plus" aria-hidden="true"></i> Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="adopt-hero" class="parallax">
+            <div class="hero-content glass-effect" data-aos="fade-up">
+                <h2>Find Your Perfect Companion</h2>
+                <p>Give a loving home to a pet in need</p>
+            </div>
+        </section>
+        <section id="adoption-process" class="container">
+            <h2 data-aos="fade-up">Adoption Process</h2>
+            <div class="process-steps" data-aos="fade-up" data-aos-delay="200">
+                <div class="step" style="background-color: #D0E8FF; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <i class="fas fa-search" style="color: #3498db;"></i>
+                    <h3 style="color: #333;">Browse</h3>
+                    <p style="color: #555;">Look through our available pets and find your perfect match.</p>
+                </div>
+                <div class="step" style="background-color: #FFD0D0; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <i class="fas fa-file-alt" style="color: #e74c3c;"></i>
+                    <h3 style="color: #333;">Apply</h3>
+                    <p style="color: #555;">Fill out an adoption application for the pet you're interested in.</p>
+                </div>
+                <div class="step" style="background-color: #D0FFD0; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <i class="fas fa-user-friends" style="color: #2ecc71;"></i>
+                    <h3 style="color: #333;">Meet</h3>
+                    <p style="color: #555;">Schedule a meet-and-greet with your potential new family member.</p>
+                </div>
+                <div class="step" style="background-color: #FFE0C0; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <i class="fas fa-home" style="color: #f39c12;"></i>
+                    <h3 style="color: #333;">Adopt</h3>
+                    <p style="color: #555;">Complete the adoption process and welcome your new pet home!</p>
+                </div>
+            </div>
+        </section>
+        <section id="available-pets" class="container">
+            <h2 data-aos="fade-up">Available Pets</h2>
+            <div class="pet-filters" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="dog">Dogs</button>
+                <button class="filter-btn" data-filter="cat">Cats</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="pet-grid" data-aos="fade-up" data-aos-delay="400">
+                <!-- Pet cards will be dynamically added here using JavaScript -->
+            </div>
+        </section>
+        <section id="adoption-faq" class="container">
+            <h2 data-aos="fade-up">Frequently Asked Questions</h2>
+            <div class="faq-list" data-aos="fade-up" data-aos-delay="200" style="background-color: var(--wave-bg);">
+                <details style="background-color: var(--wave-bg);">
+                    <summary>What are the requirements for adopting a pet?</summary>
+                    <p>Requirements may vary by rescue organization but generally include being at least 18 years old, having a stable living situation, and being able to provide proper care for the pet.</p>
+                </details>
+                <details style="background-color: var(--wave-bg);">
+                    <summary>How much does it cost to adopt a pet?</summary>
+                    <p>Adoption fees vary by organization and type of pet but typically range from $50 to $300. This fee often covers initial veterinary care, spaying/neutering, and microchipping.</p>
+                </details>
+                <details style="background-color: var(--wave-bg);">
+                    <summary>Can I adopt if I rent my home?</summary>
+                    <p>Yes, but you'll need to provide proof that your landlord allows pets. Some rescues may contact your landlord to confirm.</p>
+                </details>
+                <details style="background-color: var(--wave-bg);">
+                    <summary>How long does the adoption process take?</summary>
+                    <p>The process can take anywhere from a few days to a few weeks, depending on the organization and how quickly you can complete the necessary steps.</p>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer class="glass-effect">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.jpg" alt="Animal Rescue Finder Logo" width="40" height="40">
+                <p>Animal Rescue Finder</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.facebook.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Animal Rescue Finder. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script src="adopt.js" defer></script>
+</body>
+</html>

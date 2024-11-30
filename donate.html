@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Animal Rescue Finder | Make a Difference Today</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta name="description" content="Support Animal Rescue Finder's mission to help animals in need. Your donation makes a lasting impact on the lives of rescued animals. Every contribution counts!">
+    <link rel="canonical" href="https://www.animalrescuefinder.com/donate" />
+    <meta property="og:title" content="Donate to Animal Rescue Finder | Make a Difference Today">
+    <meta property="og:description" content="Your generous donation helps us continue our mission to rescue and care for animals in need. Every contribution, no matter how small, makes a significant impact.">
+    <meta property="og:image" content="https://www.animalrescuefinder.com/images/donate-og-image.jpg">
+    <meta property="og:url" content="https://www.animalrescuefinder.com/donate">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://js.stripe.com/v3/" defer></script>
+    <script src="donation.js" defer></script>
+</head>
+<body class="donate-page">
+    <header class="glass-effect">
+        <div class="header-content">
+            <a href="home.html" class="logo-link" aria-label="Go to homepage">
+                <img src="images/logo.jpg" alt="Animal Rescue Finder Logo" class="logo" width="60" height="60">
+                <h1>Animal Rescue Finder</h1>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Donate</a></li>
+                    <li><a href="index.html"><i class="fas fa-search-location" aria-hidden="true"></i> Find Rescues</a></li>
+                    <li><a href="adopt.html" class="active" aria-current="page"><i class="fas fa-paw" aria-hidden="true"></i> Adopt</a></li>
+                    <li><a href="join.html" class="nav-cta"><i class="fas fa-user-plus" aria-hidden="true"></i> Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="donate-hero" class="parallax">
+            <div class="hero-content glass-effect" data-aos="fade-up">
+                <h2>Make a Difference Today</h2>
+                <p>Your donation can change an animal's life forever</p>
+            </div>
+        </section>
+        <section id="donate-form" class="container">
+            <h2 data-aos="fade-up"><i class="fas fa-hand-holding-heart"></i> Support Our Cause</h2>
+            <p data-aos="fade-up" data-aos-delay="200" style="color: #333;">Your generous donation helps us continue our mission to rescue and care for animals in need. Every contribution, no matter how small, makes a significant impact on the lives of these vulnerable animals.</p>
+            <form id="donationForm" data-aos="fade-up" data-aos-delay="400">
+                <div class="form-group">
+                    <label for="amount" style="color: #333;">Donation Amount:</label>
+                    <div class="input-group">
+                        <span class="currency-symbol" style="color: #333;">$</span>
+                        <input type="number" id="amount" name="amount" min="1" step="1" required>
+                    </div>
+                </div>
+                <div class="donation-tiers">
+                    <button type="button" class="tier-button" data-amount="10" style="color: #fff; background-color: #3498db;">$10</button>
+                    <button type="button" class="tier-button" data-amount="25" style="color: #fff; background-color: #3498db;">$25</button>
+                    <button type="button" class="tier-button" data-amount="50" style="color: #fff; background-color: #3498db;">$50</button>
+                    <button type="button" class="tier-button" data-amount="100" style="color: #fff; background-color: #3498db;">$100</button>
+                    <button type="button" class="tier-button custom" style="color: #fff; background-color: #3498db;">Custom</button>
+                </div>
+                <div class="form-group">
+                    <label for="name" style="color: #333;">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" style="color: #333;">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="frequency" style="color: #333;">Donation Frequency:</label>
+                    <select id="frequency" name="frequency" required>
+                        <option value="one-time">One-time</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="annually">Annually</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message" style="color: #333;">Message (Optional):</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label style="color: #333;">
+                        <input type="checkbox" name="newsletter" id="newsletter" checked>
+                        Sign up for our newsletter
+                    </label>
+                </div>
+                <div id="card-element">
+                    <!-- A Stripe Element will be inserted here. -->
+                </div>
+                <div id="card-errors" role="alert"></div>
+                <button type="submit" class="donate-button pulse" style="color: #fff; background-color: #e74c3c;"><i class="fas fa-paw"></i> Donate Now</button>
+            </form>
+        </section>
+        <section id="impact" class="wave-bg">
+            <div class="container">
+                <h2 data-aos="fade-up" style="color: var(--primary-color);">Your Impact: Making a Difference</h2>
+                <p class="impact-intro" data-aos="fade-up" data-aos-delay="100" style="color: var(--text-color);">Every donation, no matter the size, contributes to improving the lives of animals in need. Here's how your generosity can help:</p>
+                <div class="impact-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="impact-item">
+                        <img src="images/dog3.jpg" alt="Dog being fed" loading="lazy">
+                        <h3 style="color: var(--primary-color);">$10</h3>
+                        <p style="color: var(--primary-color);">Provides nutritious meals for a rescued animal for an entire week</p>
+                    </div>
+                    <div class="impact-item">
+                        <img src="images/cat4.jpg" alt="Cat getting vaccinated" loading="lazy">
+                        <h3 style="color: var(--primary-color);">$25</h3>
+                        <p style="color: var(--primary-color);">Ensures essential vaccinations to protect a rescued animal's health</p>
+                    </div>
+                    <div class="impact-item">
+                        <img src="images/shelter.jpg" alt="Animal shelter" loading="lazy">
+                        <h3 style="color: var(--primary-color);">$50</h3>
+                        <p style="color: var(--primary-color);">Sponsors safe shelter and care for a rescue animal for one month</p>
+                    </div>
+                    <div class="impact-item">
+                        <img src="images/rescue.webp" alt="Vet examining a dog" loading="lazy">
+                        <h3 style="color: var(--primary-color);">$100</h3>
+                        <p style="color: var(--primary-color);">Funds critical medical treatment for a sick or injured animal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="wave-bg">
+            <h2 data-aos="fade-up">Donor Stories</h2>
+            <div class="testimonial-carousel" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial">
+                    <blockquote style="color: var(--primary-color);">"Donating to Animal Rescue Finder was one of the most rewarding experiences. Knowing that my contribution directly helps animals in need gives me immense joy."</blockquote>
+                    <cite>- Sarah M., Monthly Donor</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote style="color: var(--primary-color);">"I've been supporting Animal Rescue Finder for years. Their transparency and dedication to animal welfare is truly inspiring."</blockquote>
+                    <cite>- John D., Long-time Supporter</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote style="color: var(--primary-color);">"As an animal lover, I'm grateful for the opportunity to make a difference through Animal Rescue Finder. Every donation feels like a step towards a better world for our furry friends."</blockquote>
+                    <cite>- Emily R., First-time Donor</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content container">
+            <div class="footer-logo">
+                <img src="images/logo.jpg" alt="Animal Rescue Finder Logo" width="40" height="40">
+                <p>Animal Rescue Finder</p>
+            </div>
+            <nav aria-label="Footer navigation">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://www.facebook.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Animal Rescue Finder. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
+
+
