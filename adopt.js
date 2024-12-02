@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sample pet data (in a real application, this would come from a database)
     const pets = [
-        { name: 'Buddy', type: 'dog', breed: 'Labrador', age: 3, image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1' },
-        { name: 'Whiskers', type: 'cat', breed: 'Siamese', age: 2, image: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8' },
-        { name: 'Rex', type: 'dog', breed: 'German Shepherd', age: 5, image: 'https://images.unsplash.com/photo-1589941013453-ec89f33b5e95' },
-        { name: 'Mittens', type: 'cat', breed: 'Persian', age: 1, image: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131' },
-        { name: 'Hoppy', type: 'other', breed: 'Rabbit', age: 1, image: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308' },
-        { name: 'Polly', type: 'other', breed: 'Parrot', age: 10, image: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3' },
+        { name: 'Buddy', type: 'dog', breed: 'Labrador', age: 3, image: 'images/pet1.jpg' },
+        { name: 'Whiskers', type: 'cat', breed: 'Siamese', age: 2, image: 'images/pet2.jpg' },
+        { name: 'Rex', type: 'dog', breed: 'German Shepherd', age: 5, image: 'images/pet3.jpg' },
+        { name: 'Mittens', type: 'cat', breed: 'Persian', age: 1, image: 'images/pet4.jpg' },
+        { name: 'Hoppy', type: 'other', breed: 'Rabbit', age: 1, image: 'images/pet5.jpg' },
+        { name: 'Polly', type: 'other', breed: 'Parrot', age: 10, image: 'images/pet6.jpg' },
     ];
 
     function createPetCard(pet) {
