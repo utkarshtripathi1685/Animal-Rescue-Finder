@@ -52,7 +52,7 @@ project-folder/
 ├── feedback.html    # Feedback Collection Page
 ├── styles.css       # Unified styling for the website
 ├── script.js        # Core JavaScript functionalities
-└── assets/          # Images and other assets
+└── images/          # Images and other assets
 ```
 
 ---
