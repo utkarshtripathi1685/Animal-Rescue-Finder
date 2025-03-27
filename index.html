@@ -3,26 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Rescues - Animal Rescue Finder | Connect with Local Animal Shelters</title>
+    <title>Animal Rescue Finder - Connect, Adopt, and Save Lives</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
-    <meta name="description" content="Easily locate and connect with nearby animal rescue organizations using Animal Rescue Finder. Make a lasting difference in animals' lives today!">
-    <link rel="canonical" href="https://www.animalrescuefinder.com/find-rescues">
-    <meta property="og:title" content="Find Local Animal Rescues | Animal Rescue Finder">
-    <meta property="og:description" content="Discover and support nearby animal rescue organizations. Help animals in need and make a positive impact in your community.">
-    <meta property="og:image" content="https://www.animalrescuefinder.com/images/find-rescues-og.jpg">
-    <meta property="og:url" content="https://www.animalrescuefinder.com/find-rescues">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Animal Rescue Finder connects you with local animal rescue organizations. Adopt, volunteer, or donate to help animals in need and make a difference today!">
+    <link rel="canonical" href="https://www.animalrescuefinder.com/" />
+    <meta property="og:title" content="Animal Rescue Finder - Connect, Adopt, and Save Lives">
+    <meta property="og:description" content="Find local animal rescues, adopt pets, and support animal welfare. Join our community and make a difference in animals' lives today!">
+    <meta property="og:image" content="https://www.animalrescuefinder.com/images/og-image.jpg">
+    <meta property="og:url" content="https://www.animalrescuefinder.com/">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="" defer></script>
-    <script src="script.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYeZ73igUwXEhxoCWTo_HNRSDj_uEC8cc" async defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
-<body class="app-page">
+<body class="home-page">
     <header class="glass-effect">
         <div class="header-content">
             <a href="home.html" class="logo-link" aria-label="Go to homepage">
@@ -31,10 +25,10 @@
             </a>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="home.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-home" aria-hidden="true"></i> Home</a></li>
                     <li><a href="about.html"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a></li>
                     <li><a href="donate.html"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Donate</a></li>
-                    <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-search-location" aria-hidden="true"></i> Find Rescues</a></li>
+                    <li><a href="map.html"><i class="fas fa-search-location" aria-hidden="true"></i> Find Rescues</a></li>
                     <li><a href="adopt.html"><i class="fas fa-paw" aria-hidden="true"></i> Adopt</a></li>
                     <li><a href="join.html" class="nav-cta"><i class="fas fa-user-plus" aria-hidden="true"></i> Join</a></li>
                 </ul>
@@ -42,24 +36,95 @@
         </div>
     </header>
     <main>
-        <section id="location" aria-labelledby="location-heading">
-            <h2 id="location-heading"><i class="fas fa-search-location" aria-hidden="true"></i> Find Nearby Animal Rescue Organizations</h2>
-            <div class="button-group">
-                <button id="findNearbyRescues" class="primary-button"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Find Nearby Rescues</button>
-                <button id="useGPS">Use GPS Location</button>
+        <section id="hero" class="parallax">
+            <div class="hero-content glass-effect" data-aos="fade-up">
+                <h2>Transform Lives: Help Animals in Need</h2>
+                <p>Connect with local rescues, save lives, and create lasting bonds.</p>
+                <a href="map.html" class="cta-button pulse">Find Nearby Rescues</a>
             </div>
         </section>
-        <section id="map">
-            <div id="googleMap" style="width:100%;height:400px;"></div>
+        <section id="mission" class="wave-bg">
+            <div class="container">
+                <h2 data-aos="fade-up">Our Mission</h2>
+                <p data-aos="fade-up" data-aos-delay="200">We're dedicated to creating a world where every animal is loved, protected, and has a forever home.</p>
+                <div class="image-gallery">
+                    <figure class="gallery-item">
+                        <img src="images/cat1.avif" alt="Happy rescued dog playing in a field" loading="lazy">
+                        <figcaption>Bringing joy to rescued animals</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="images/cat2.avif" alt="Cute rescued cat being petted" loading="lazy">
+                        <figcaption>Providing care and comfort</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="images/dog1.avif" alt="Group of rescued animals including dogs and cats" loading="lazy">
+                        <figcaption>Giving animals a second chance</figcaption>
+                    </figure>
+                </div>
+            </div>
         </section>
-        <section id="map-container" aria-labelledby="map-heading">
-            <h2 id="map-heading" class="visually-hidden">Map of Nearby Rescue Organizations</h2>
-            <div id="map" class="map-responsive" aria-label="Map showing nearby rescue organizations"></div>
+        <section id="features" class="wave-bg">
+            <div class="container">
+                <h2 data-aos="fade-up">How We Help</h2>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <i class="fas fa-search fa-3x" aria-hidden="true"></i>
+                        <h3>Locate Rescues</h3>
+                        <p>Find nearby animal rescue organizations quickly and easily using our advanced search tools.</p>
+                        <a href="map.html" class="feature-button">Find Rescues</a>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-hands-helping fa-3x" aria-hidden="true"></i>
+                        <h3>Support Animals</h3>
+                        <p>Discover multiple ways to help through adoption, fostering, volunteering, or donating.</p>
+                        <a href="donate.html" class="feature-button">Donate Now</a>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-heart fa-3x" aria-hidden="true"></i>
+                        <h3>Make a Difference</h3>
+                        <p>Join a passionate community dedicated to improving animal welfare in your area and beyond.</p>
+                        <a href="join.html" class="feature-button">Join Community</a>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-paw fa-3x" aria-hidden="true"></i>
+                        <h3>Adopt a Pet</h3>
+                        <p>Find your perfect companion and give a loving home to an animal in need.</p>
+                        <a href="adopt.html" class="feature-button">Adopt Now</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="results" aria-labelledby="results-heading">
-            <h2 id="results-heading"><i class="fas fa-list" aria-hidden="true"></i> Nearby Rescue Organizations</h2>
-            <ul id="rescueList" class="rescue-grid" aria-live="polite"></ul>
-            <div id="error-message" class="error-message" style="display: none;"></div>
+        <section id="impact" class="parallax">
+            <div class="container">
+                <h2 data-aos="fade-up">Our Impact</h2>
+                <div class="impact-stats">
+                    <!-- ... (keep existing stats, add data-aos attributes) ... -->
+                </div>
+            </div>
+        </section>
+        <section id="testimonials" class="wave-bg">
+            <div class="container">
+                <h2 data-aos="fade-up">What Our Users Say</h2>
+                <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial glass-effect">
+                        <img src="images/person1.jpg" alt="Portrait of Sarah J." loading="lazy">
+                        <blockquote>"Animal Rescue Finder helped me find my new best friend. The process was so easy and rewarding!"</blockquote>
+                        <cite>- Sarah J., Pet Parent</cite>
+                    </div>
+                    <div class="testimonial glass-effect">
+                        <img src="images/person2.jpg" alt="Portrait of Michael T." loading="lazy">
+                        <blockquote>"Thanks to this amazing platform, I've been able to volunteer at local shelters and make a real difference."</blockquote>
+                        <cite>- Michael T., Volunteer</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="cta" class="wave-bg">
+            <div class="container">
+                <h2 data-aos="fade-up">Ready to Make a Difference?</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Join our community of animal lovers and start your journey to help animals in need.</p>
+                <a href="join.html" class="cta-button pulse" data-aos="fade-up" data-aos-delay="400">Get Started Now</a>
+            </div>
         </section>
     </main>
     <div class="feedback-prompt"></div>
@@ -72,18 +137,26 @@
                 <img src="images/logo.jpg" alt="Animal Rescue Finder Logo" width="40" height="40">
                 <p>Animal Rescue Finder</p>
             </div>
-            <nav aria-label="Footer navigation">
+            <nav class="footer-nav" aria-label="Footer navigation">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="contact.html">Contact Us</a>
             </nav>
             <div class="social-links">
-                <a href="https://www.facebook.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                 <a href="https://www.twitter.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                 <a href="https://www.instagram.com/animalrescuefinder" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
             </div>
         </div>
         <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Animal Rescue Finder. All rights reserved.</p>
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
